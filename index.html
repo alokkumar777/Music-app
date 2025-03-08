@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neomorphic Music App</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="wave.css"> -->
     <!-- font awesome cdn -->
     <link
       rel="stylesheet"
@@ -17,10 +18,21 @@
   <body>
     <div class="app-container">
       <header class="app-header">
-        <h1>My Music App</h1>
+        <h1>MUSIC <i class="fa-solid fa-music"></i></h1>
       </header>
       <div class="current-track">
         <p id="track-name">Select a track to play</p>
+        <div class="wave-container">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
       </div>
       <main class="track-list">
         <div
@@ -89,7 +101,6 @@
         <div
           class="track-card"
           data-track="assets/track10.m4a"
-          The First Touch
           data-name="The First Touch"
         >
           The First Touch
@@ -309,10 +320,24 @@
             value="0.5"
           />
         </div>
-        <p>© 2025 Music App</p>
-        <p>By - @itsak</p>
+        <p>
+          <strong>Credits:</strong>
+          <br />
+          Songs sung by:
+          <a href="https://www.instagram.com/alliee_sings/" target="_blank"
+            >@alliee_sings</a
+          >
+          <br />
+          Developed by:
+          <a href="https://github.com/alokkumar777" target="_blank"
+            >@alokkumar777</a
+          >
+        </p>
+        <p>&copy; 2025 MUSIC <i class="fa-solid fa-music"></i> App. All Rights Reserved.</p>
+        <p>Version: 1.0.3</p>
       </footer>
     </div>
     <script src="script.js"></script>
+    <!-- <script src="wave.js"></script> -->
   </body>
 </html>
