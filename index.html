@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neomorphic Music App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <h1>My Music App</h1>
+      </header>
+      <div class="current-track">
+        <p id="track-name">Select a track to play</p>
+      </div>
+      <main class="track-list">
+        <div
+          class="track-card"
+          data-track="assets/track1.m4a"
+          data-name="Whispers of the Heart"
+        >
+          Whispers of the Heart
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track2.m4a"
+          data-name="In Your Embrace"
+        >
+          In Your Embrace
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track3.m4a"
+          data-name="Dreams of Us"
+        >
+          Dreams of Us
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track4.m4a"
+          data-name="Softly Spoken"
+        >
+          Softly Spoken
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track5.m4a"
+          data-name="Endless Love"
+        >
+          Endless Love
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track6.m4a"
+          data-name="Unwritten Promises"
+        >
+          Unwritten Promises
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track7.m4a"
+          data-name="Falling for You"
+        >
+          Falling for You
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track8.m4a"
+          data-name="My Forever"
+        >
+          My Forever
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track9.m4a"
+          data-name="You and Me"
+        >
+          You and Me
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track10.m4a"
+          The First Touch
+          data-name="The First Touch"
+        >
+          The First Touch
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track11.m4a"
+          data-name="Echoes of You"
+        >
+          Echoes of You
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track12.m4a"
+          data-name="Starry Nights Together"
+        >
+          Starry Nights Together
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track13.m4a"
+          data-name="Secret Serenade"
+        >
+          Secret Serenade
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track14.m4a"
+          data-name="Timeless Magic"
+        >
+          Timeless Magic
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track15.m4a"
+          data-name="Only Yours"
+        >
+          Only Yours
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track16.m4a"
+          data-name="Hues of Love"
+        >
+          Hues of Love
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track17.m4a"
+          data-name="Golden Moments"
+        >
+          Golden Moments
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track18.m4a"
+          data-name="Scent of You"
+        >
+          Scent of You
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track19.m4a"
+          data-name="Our Little World"
+        >
+          Our Little World
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track20.m4a"
+          data-name="Chasing Stars with You"
+        >
+          Chasing Stars with You
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track21.m4a"
+          data-name="The Silent Song"
+        >
+          The Silent Song
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track22.m4a"
+          data-name="Rhythm of Us"
+        >
+          Rhythm of Us
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track23.m4a"
+          data-name="Whispered Melodies"
+        >
+          Whispered Melodies
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track24.m4a"
+          data-name="Soulful Stares"
+        >
+          Soulful Stares
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track25.m4a"
+          data-name="Boundless Dreams"
+        >
+          Boundless Dreams
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track26.m4a"
+          data-name="Beyond the Words"
+        >
+          Beyond the Words
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track27.m4a"
+          data-name="Softly Yours"
+        >
+          Softly Yours
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track28.m4a"
+          data-name="Our Secret Universe"
+        >
+          Our Secret Universe
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track29.m4a"
+          data-name="Heartstrings Entwined"
+        >
+          Heartstrings Entwined
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track30.m4a"
+          data-name="The Warmth of Us"
+        >
+          The Warmth of Us
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track32.m4a"
+          data-name="Closer than Ever"
+        >
+          Closer than Ever
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track33.m4a"
+          data-name="A Thousand Smiles"
+        >
+          A Thousand Smiles
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track34.m4a"
+          data-name="Crimson Skies"
+        >
+          Crimson Skies
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track35.m4a"
+          data-name="Every Breath You Are"
+        >
+          Every Breath You Are
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track36.m4a"
+          data-name="Unfolding Us"
+        >
+          Unfolding Us
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track37.m4a"
+          data-name="The Glow Within"
+        >
+          The Glow Within
+        </div>
+        <div
+          class="track-card"
+          data-track="assets/track38.m4a"
+          data-name="The Language of Love"
+        >
+          The Language of Love
+        </div>
+      </main>
+      <footer class="app-footer">
+        <audio id="audio-player">
+          <source id="audio-source" src="" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+        <button id="play-pause-btn" class="control-btn">
+          <span id="play-icon"><i class="fa-solid fa-play"></i></span>
+          <span id="pause-icon" style="display: none"
+            ><i class="fa-solid fa-pause"></i
+          ></span>
+        </button>
+        <div class="volume-control">
+          <label for="volume-slider">Volume</label>
+          <input
+            id="volume-slider"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+        </div>
+        <p>© 2025 Music App</p>
+        <p>By - @itsak</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
