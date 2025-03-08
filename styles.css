@@ -39,8 +39,8 @@ body {
   width: 400px;
   padding: 20px;
   background: var(--primary-bg);
-  border-radius: var(--border-radius-lg);
-  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+  /* border-radius: var(--border-radius-lg); */
+  /* box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light); */
 }
 
 /* Header */
@@ -81,10 +81,11 @@ body {
   gap: 15px;
   overflow-y: auto;
   max-height: 300px;
-  padding-right: 10px;
+  padding: 0 10px;
   margin-bottom: 20px;
   scrollbar-width: thin;
   scrollbar-color: var(--shadow-dark) var(--primary-bg);
+  z-index: 10;
 }
 
 /* Custom Scrollbar */
@@ -114,6 +115,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition-default);
+  z-index: 10;
 }
 
 .track-card:first-child {
