@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   color: var(--text-primary);
 }
 
@@ -46,9 +46,9 @@ body {
 .app-container {
   width: 25rem;
   padding: 1.25rem;
-  /* margin: 2rem 0; */
+  margin-top: 1rem;
   background: var(--primary-bg);
-  height: 100vh;
+  /* height: 100vh; */
   /* border-radius: var(--border-radius-lg); */
   /* box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light); */
 }
