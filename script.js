@@ -155,6 +155,63 @@ audioPlayer.addEventListener("ended", () => {
   }
 });
 
+// Theme toggle functionality
+function setupThemeToggle() {
+  // Create theme toggle button
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'theme-toggle';
+  themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  themeToggle.title = 'Toggle Dark/Light Mode';
+  
+  // Get the app header
+  const appHeader = document.querySelector('.app-header');
+  
+  // Create a container for the header content
+  const headerContainer = document.createElement('div');
+  headerContainer.className = 'header-container';
+  
+  // Move the h1 from app-header to header-container
+  const appTitle = appHeader.querySelector('h1');
+  appHeader.removeChild(appTitle);
+  
+  // Add the title and theme toggle to the container
+  headerContainer.appendChild(appTitle);
+  headerContainer.appendChild(themeToggle);
+  
+  // Add the container to the app header
+  appHeader.appendChild(headerContainer);
+
+  // Check for saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+
+  // Add click event to toggle theme
+  themeToggle.addEventListener('click', () => {
+    // Toggle dark mode class
+    document.body.classList.toggle('dark-mode');
+    
+    // Add animation class
+    document.body.classList.add('theme-changing');
+    
+    // Update icon based on theme
+    if (document.body.classList.contains('dark-mode')) {
+      themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      localStorage.setItem('theme', 'light');
+    }
+    
+    // Remove animation class after animation completes
+    setTimeout(() => {
+      document.body.classList.remove('theme-changing');
+    }, 500);
+  });
+}
+
 // Initialize the control buttons when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   createControlButtons();
@@ -166,4 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (audioPlayer.paused) {
     waveContainer.classList.add("paused");
   }
+
+  // Initialize theme toggle
+  setupThemeToggle();
 });
