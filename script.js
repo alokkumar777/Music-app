@@ -8,7 +8,7 @@ const playPauseBtn = document.getElementById("play-pause-btn");
 const playIcon = document.getElementById("play-icon");
 const pauseIcon = document.getElementById("pause-icon");
 const volumeSlider = document.getElementById("volume-slider");
-const waveContainer = document.querySelector('.wave-container');
+const waveContainer = document.querySelector(".wave-container");
 
 // Store currently active track card
 let activeTrackCard = null;
@@ -42,8 +42,8 @@ function playTrack(card) {
   }, 200);
 
   // Activate wave animation
-  waveContainer.classList.add('active');
-  waveContainer.classList.remove('paused');
+  waveContainer.classList.add("active");
+  waveContainer.classList.remove("paused");
 
   // Update play/pause icons
   playIcon.style.display = "none";
@@ -127,12 +127,12 @@ playPauseBtn.addEventListener("click", () => {
     audioPlayer.play();
     playIcon.style.display = "none";
     pauseIcon.style.display = "inline";
-    waveContainer.classList.remove('paused'); // Resume wave animation
+    waveContainer.classList.remove("paused"); // Resume wave animation
   } else {
     audioPlayer.pause();
     playIcon.style.display = "inline";
     pauseIcon.style.display = "none";
-    waveContainer.classList.add('paused'); // Pause wave animation
+    waveContainer.classList.add("paused"); // Pause wave animation
   }
 });
 
@@ -161,9 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set initial volume from slider
   audioPlayer.volume = volumeSlider.value;
-  
+
   // Initialize wave container state
   if (audioPlayer.paused) {
-    waveContainer.classList.add('paused');
+    waveContainer.classList.add("paused");
   }
 });
