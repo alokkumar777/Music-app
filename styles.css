@@ -12,13 +12,13 @@
   --border-radius-md: 0.75rem; /* 12px */
   --border-radius-sm: 0.625rem; /* 10px */
   --transition-default: all 0.3s ease;
-    /* Add dark mode variables */
-    --dark-primary-bg: #121212;
-    --dark-shadow-dark: #0a0a0a;
-    --dark-shadow-light: #252525;
-    --dark-text-primary: #e0e0e0;
-    --dark-text-secondary: #a0a0a0;
-    --theme-transition: all 0.5s ease;
+  /* Add dark mode variables */
+  --dark-primary-bg: #121212;
+  --dark-shadow-dark: #0a0a0a;
+  --dark-shadow-light: #252525;
+  --dark-text-primary: #e0e0e0;
+  --dark-text-secondary: #a0a0a0;
+  --theme-transition: all 0.5s ease;
 }
 
 * {
@@ -513,7 +513,6 @@ a {
     max-height: 12.5rem;
   }
 }
-
 
 /* Add this class to apply dark mode */
 .dark-mode {
