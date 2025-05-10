@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Under Maintenance</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-      
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      
+
       body {
         font-family: "Poppins", sans-serif;
         background-color: #e0e5ec;
@@ -27,7 +33,7 @@
         position: relative;
         overflow-x: hidden; /* Prevent horizontal scrolling */
       }
-      
+
       .maintenance-container {
         width: 90%;
         max-width: 600px;
@@ -42,18 +48,18 @@
         z-index: 1;
         overflow: hidden;
       }
-      
+
       /* .maintenance-container:hover {
         box-shadow: 8px 8px 16px #b8bec5, 
                     -8px -8px 16px #ffffff;
         transform: translateY(-3px);
       } */
-      
+
       .icon-container {
         margin-bottom: 30px;
         position: relative;
       }
-      
+
       .icon {
         font-size: 70px;
         color: #6d7993;
@@ -61,7 +67,7 @@
         display: inline-block;
         transform-origin: 70% 70%;
       }
-      
+
       .progress-container {
         width: 100%;
         height: 10px;
@@ -69,10 +75,9 @@
         border-radius: 10px;
         margin: 40px 0 20px;
         overflow: hidden;
-        box-shadow: inset 2px 2px 5px #b8bec5, 
-                    inset -2px -2px 5px #ffffff;
+        box-shadow: inset 2px 2px 5px #b8bec5, inset -2px -2px 5px #ffffff;
       }
-      
+
       .progress-bar {
         height: 100%;
         width: 0%;
@@ -81,7 +86,7 @@
         transition: width 0.4s ease;
         animation: progress 3s ease-in-out infinite;
       }
-      
+
       .btn-shine {
         display: inline-block;
         color: #6d7993;
@@ -97,33 +102,33 @@
         margin-bottom: 20px;
         line-height: 1.4;
       }
-      
+
       .message {
         font-size: 18px;
         color: #6d7993;
         margin: 20px 0 30px;
         line-height: 1.6;
       }
-      
+
       .estimated-time {
         font-size: 16px;
         color: #6d7993;
         margin-top: 10px;
         font-weight: 600;
       }
-      
+
       .contact-info {
         margin-top: 30px;
         font-size: 16px;
       }
-      
+
       .social-links {
         display: flex;
         justify-content: center;
         margin-top: 20px;
         gap: 15px;
       }
-      
+
       .social-link {
         width: 40px;
         height: 40px;
@@ -131,61 +136,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 5px 5px 10px #b8bec5, 
-                    -5px -5px 10px #ffffff;
+        box-shadow: 5px 5px 10px #b8bec5, -5px -5px 10px #ffffff;
         color: #6d7993;
         font-size: 20px;
         transition: all 0.3s ease;
         text-decoration: none;
       }
-      
+
       .social-link:hover {
         transform: translateY(-2px);
-        box-shadow: 7px 7px 14px #b8bec5, 
-                    -7px -7px 14px #ffffff;
+        box-shadow: 7px 7px 14px #b8bec5, -7px -7px 14px #ffffff;
       }
-      
-      .notify-form {
-        margin-top: 30px;
-        text-align: center;
+
+      .disabled-link {
+        pointer-events: none; /* Prevent clicking */
+        color: gray; /* Change appearance */
+        text-decoration: none;
+        cursor: not-allowed; /* Show "not-allowed" cursor */
       }
-      
-      .input-group {
-        display: flex;
-        margin: 0 auto;
-        max-width: 400px;
-        box-shadow: inset 2px 2px 5px #b8bec5, 
-                    inset -2px -2px 5px #ffffff;
-        border-radius: 25px;
-        overflow: hidden;
-      }
-      
-      .notify-input {
-        flex-grow: 1;
-        border: none;
-        padding: 12px 20px;
-        font-family: inherit;
-        font-size: 16px;
-        outline: none;
-        background: #e0e5ec;
-        color: #6d7993;
-      }
-      
-      .notify-btn {
-        border: none;
-        background: linear-gradient(145deg, #6d7993, #9babc2);
-        color: white;
-        padding: 12px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-family: inherit;
-        font-weight: 600;
-      }
-      
-      .notify-btn:hover {
-        background: linear-gradient(145deg, #5f6a80, #8998ab);
-      }
-      
+
       @keyframes shine {
         0% {
           background-position: 0;
@@ -197,7 +166,7 @@
           background-position: 300px;
         }
       }
-      
+
       @keyframes wrench {
         0% {
           transform: rotate(-10deg);
@@ -224,7 +193,7 @@
           transform: rotate(0deg);
         }
       }
-      
+
       @keyframes progress {
         0% {
           width: 5%;
@@ -236,7 +205,7 @@
           width: 5%;
         }
       }
-      
+
       @keyframes float {
         0% {
           transform: translateY(0) rotate(0deg);
@@ -257,75 +226,68 @@
         .maintenance-container {
           padding: 30px;
         }
-        
+
         .btn-shine {
           font-size: 24px;
         }
-        
+
         .message {
           font-size: 16px;
         }
       }
-      
+
       @media (max-width: 480px) {
         .maintenance-container {
           padding: 25px;
           width: 95%;
         }
-        
+
         .btn-shine {
           font-size: 22px;
         }
-        
+
         .icon {
           font-size: 60px;
         }
-        
       }
-
     </style>
   </head>
   <body>
-    <div class="particles" id="particles"></div>
-    
     <div class="maintenance-container">
       <div class="icon-container">
         <div class="icon">🛠️</div>
       </div>
-      
+
       <h1 class="btn-shine">Under Maintenance</h1>
-      
-      <p class="message">I currently making some improvements to the website to serve you better. Please check back soon!</p>
-      
+
+      <p class="message">
+        I currently making some improvements to the website to serve you better.
+        Please check back soon!
+      </p>
+
       <div class="progress-container">
         <div class="progress-bar"></div>
       </div>
-      
-      <p class="estimated-time">Estimated completion: <span id="countdown">2 hours</span></p>
-      
-      <!-- <div class="notify-form">
-        <p>Get notified when we're back online:</p>
-        <div class="input-group">
-          <input type="email" class="notify-input" placeholder="Enter your email">
-          <button class="notify-btn">Notify Me</button>
-        </div>
-      </div> -->
-      
+
+      <p class="estimated-time">
+        Estimated completion:
+        <span id="countdown"><i class="fa-solid fa-question"></i></span>
+      </p>
+
       <div class="contact-info">
-        <p>If need urgent assistance? PLEASE DON'T CONTACT:</p>
+        <p>If need urgent assistance? PLEASE DON'T CONTACT</p>
         <div class="social-links">
-          <a href="#" class="social-link"><i class="fa-solid fa-envelope"></i></a>
-          <a href="#" class="social-link"><i class="fa-solid fa-phone"></i></a>
-          <a href="#" class="social-link"><i class="fa-solid fa-message"></i></a>
+          <a href="#" class="social-link disabled-link"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+          <a href="#" class="social-link disabled-link"
+            ><i class="fa-solid fa-phone"></i
+          ></a>
+          <a href="#" class="social-link disabled-link"
+            ><i class="fa-solid fa-message"></i
+          ></a>
         </div>
       </div>
     </div>
-    
-    <script>
-      function validateEmail(email) {
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
-      }
-    </script>
   </body>
 </html>
