@@ -27,6 +27,15 @@
   box-sizing: border-box;
 }
 
+.fa-heart {
+  color: #c1121f;
+}
+
+.credits a {
+  color: #3f88c5;
+  font-weight: 500;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   background: var(--primary-bg);
@@ -142,12 +151,12 @@ body {
   margin-top: 0.3125rem;
 }
 
-.track-card:hover {
+/* .track-card:hover {
   transform: translateY(-0.1875rem) scale(1.02);
-  /* box-shadow: 0 8px 15px rgba(0, 150, 250, 0.2); */
+  box-shadow: 0 8px 15px rgba(0, 150, 250, 0.2);
   background: linear-gradient(145deg, #e8e8e8, #f5f5f5);
   color: #0072ff;
-}
+} */
 
 .track-card:active {
   transform: scale(0.98);
@@ -216,11 +225,11 @@ body {
   color: var(--text-primary);
 }
 
-.control-btn:hover {
+/* .control-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 0 0.9375rem rgba(0, 150, 250, 0.4);
   color: #0072ff;
-}
+} */
 
 .control-btn:active {
   transform: scale(0.95);
