@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Under Maintenance</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #e0e5ec;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      
+      .maintenance-container {
+        width: 90%;
+        max-width: 600px;
+        padding: 30px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px #b8bec5, 
+                    -10px -10px 20px #ffffff;
+        background-color: #e0e5ec;
+        transition: all 0.3s ease;
+      }
+      
+      .maintenance-container:hover {
+        box-shadow: 8px 8px 15px #b8bec5, 
+                    -8px -8px 15px #ffffff;
+        transform: translateY(-2px);
+      }
+      
+      .icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+        color: #6d7993;
+      }
+      
+      .btn-shine {
+        display: inline-block;
+        color: #6d7993;
+        background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+        background-position: 0;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s infinite linear;
+        animation-fill-mode: forwards;
+        font-weight: 600;
+        font-size: 24px; /* Increased font size */
+        text-decoration: none;
+        margin-bottom: 30px;
+        line-height: 1.4;
+      }
+      
+      .message {
+        font-size: 18px; /* Increased font size */
+        color: #6d7993;
+        margin-top: 30px;
+        line-height: 1.6;
+      }
+      
+      @keyframes shine {
+        0% {
+          background-position: 0;
+        }
+        60% {
+          background-position: 250px;
+        }
+        100% {
+          background-position: 250px;
+        }
+      }
+      
+      /* Media queries for responsiveness */
+      @media (max-width: 768px) {
+        .maintenance-container {
+          padding: 25px;
+        }
+        
+        .btn-shine {
+          font-size: 22px;
+        }
+        
+        .message {
+          font-size: 16px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .maintenance-container {
+          padding: 20px;
+          width: 95%;
+        }
+        
+        .btn-shine {
+          font-size: 20px;
+        }
+        
+        .icon {
+          font-size: 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="maintenance-container">
+      <div class="icon">🛠️</div>
+      <h1 class="btn-shine">Under Maintenance</h1>
+      <p class="message">
+        This website is temporarily down for maintenance. I'm working hard to
+        improve your experience. Please check back later!
+      </p>
+    </div>
+  </body>
+</html>
