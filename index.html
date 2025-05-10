@@ -25,6 +25,7 @@
         color: #4a4a4a;
         overflow: hidden;
         position: relative;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
       }
 
       .particles {
@@ -43,7 +44,7 @@
       
       .maintenance-container {
         width: 100%;
-        max-width: 700px;
+        max-width: 600px;
         padding: 40px;
         text-align: center;
         border-radius: 20px;
@@ -283,7 +284,7 @@
       @media (max-width: 480px) {
         .maintenance-container {
           padding: 25px;
-          /* width: 95%; */
+          width: 95%;
         }
         
         .btn-shine {
@@ -302,6 +303,20 @@
           padding: 10px 15px;
         }
       }
+
+      @media (max-width: 360px) {
+      .input-group {
+        flex-direction: column;
+      }
+
+      .notify-input {
+        margin-bottom: 10px;
+      }
+
+      .notify-btn {
+        width: 100%;
+      }
+    }
     </style>
   </head>
   <body>
