@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Under Maintenance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
       
       * {
         margin: 0;
@@ -21,30 +22,77 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        color: #4a4a4a;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: float 20s infinite linear;
       }
       
       .maintenance-container {
-        width: 90%;
-        max-width: 600px;
-        padding: 30px;
+        width: 100%;
+        max-width: 700px;
+        padding: 40px;
         text-align: center;
         border-radius: 20px;
-        box-shadow: 10px 10px 20px #b8bec5, 
-                    -10px -10px 20px #ffffff;
+        box-shadow: 12px 12px 24px #b8bec5, 
+                    -12px -12px 24px #ffffff;
         background-color: #e0e5ec;
         transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
       }
       
       .maintenance-container:hover {
-        box-shadow: 8px 8px 15px #b8bec5, 
-                    -8px -8px 15px #ffffff;
-        transform: translateY(-2px);
+        box-shadow: 8px 8px 16px #b8bec5, 
+                    -8px -8px 16px #ffffff;
+        transform: translateY(-3px);
+      }
+      
+      .icon-container {
+        margin-bottom: 30px;
+        position: relative;
       }
       
       .icon {
-        font-size: 60px;
-        margin-bottom: 20px;
+        font-size: 70px;
         color: #6d7993;
+        animation: wrench 2.5s ease infinite;
+        display: inline-block;
+        transform-origin: 70% 70%;
+      }
+      
+      .progress-container {
+        width: 100%;
+        height: 10px;
+        background: #d1d9e6;
+        border-radius: 10px;
+        margin: 40px 0 20px;
+        overflow: hidden;
+        box-shadow: inset 2px 2px 5px #b8bec5, 
+                    inset -2px -2px 5px #ffffff;
+      }
+      
+      .progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #6d7993, #9babc2);
+        border-radius: 10px;
+        transition: width 0.4s ease;
+        animation: progress 3s ease-in-out infinite;
       }
       
       .btn-shine {
@@ -56,18 +104,99 @@
         -webkit-text-fill-color: transparent;
         animation: shine 3s infinite linear;
         animation-fill-mode: forwards;
-        font-weight: 600;
-        font-size: 24px; /* Increased font size */
+        font-weight: 700;
+        font-size: 28px;
         text-decoration: none;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         line-height: 1.4;
       }
       
       .message {
-        font-size: 18px; /* Increased font size */
+        font-size: 18px;
         color: #6d7993;
-        margin-top: 30px;
+        margin: 20px 0 30px;
         line-height: 1.6;
+      }
+      
+      .estimated-time {
+        font-size: 16px;
+        color: #6d7993;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+      
+      .contact-info {
+        margin-top: 30px;
+        font-size: 16px;
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 15px;
+      }
+      
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 5px 10px #b8bec5, 
+                    -5px -5px 10px #ffffff;
+        color: #6d7993;
+        font-size: 20px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      
+      .social-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 7px 7px 14px #b8bec5, 
+                    -7px -7px 14px #ffffff;
+      }
+      
+      .notify-form {
+        margin-top: 30px;
+        text-align: center;
+      }
+      
+      .input-group {
+        display: flex;
+        margin: 0 auto;
+        max-width: 400px;
+        box-shadow: inset 2px 2px 5px #b8bec5, 
+                    inset -2px -2px 5px #ffffff;
+        border-radius: 25px;
+        overflow: hidden;
+      }
+      
+      .notify-input {
+        flex-grow: 1;
+        border: none;
+        padding: 12px 20px;
+        font-family: inherit;
+        font-size: 16px;
+        outline: none;
+        background: #e0e5ec;
+        color: #6d7993;
+      }
+      
+      .notify-btn {
+        border: none;
+        background: linear-gradient(145deg, #6d7993, #9babc2);
+        color: white;
+        padding: 12px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        font-weight: 600;
+      }
+      
+      .notify-btn:hover {
+        background: linear-gradient(145deg, #5f6a80, #8998ab);
       }
       
       @keyframes shine {
@@ -75,21 +204,75 @@
           background-position: 0;
         }
         60% {
-          background-position: 250px;
+          background-position: 300px;
         }
         100% {
-          background-position: 250px;
+          background-position: 300px;
         }
       }
       
+      @keyframes wrench {
+        0% {
+          transform: rotate(-10deg);
+        }
+        10% {
+          transform: rotate(10deg);
+        }
+        20% {
+          transform: rotate(-15deg);
+        }
+        30% {
+          transform: rotate(15deg);
+        }
+        40% {
+          transform: rotate(-10deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        60% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      
+      @keyframes progress {
+        0% {
+          width: 5%;
+        }
+        50% {
+          width: 85%;
+        }
+        100% {
+          width: 5%;
+        }
+      }
+      
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-60vh) rotate(180deg);
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-120vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
       /* Media queries for responsiveness */
       @media (max-width: 768px) {
         .maintenance-container {
-          padding: 25px;
+          padding: 30px;
         }
         
         .btn-shine {
-          font-size: 22px;
+          font-size: 24px;
         }
         
         .message {
@@ -99,28 +282,147 @@
       
       @media (max-width: 480px) {
         .maintenance-container {
-          padding: 20px;
-          width: 95%;
+          padding: 25px;
+          /* width: 95%; */
         }
         
         .btn-shine {
-          font-size: 20px;
+          font-size: 22px;
         }
         
         .icon {
-          font-size: 50px;
+          font-size: 60px;
+        }
+        
+        .notify-input {
+          padding: 10px 15px;
+        }
+        
+        .notify-btn {
+          padding: 10px 15px;
         }
       }
     </style>
   </head>
   <body>
+    <div class="particles" id="particles"></div>
+    
     <div class="maintenance-container">
-      <div class="icon">🛠️</div>
+      <div class="icon-container">
+        <div class="icon">🛠️</div>
+      </div>
+      
       <h1 class="btn-shine">Under Maintenance</h1>
-      <p class="message">
-        This website is temporarily down for maintenance. I'm working hard to
-        improve your experience. Please check back later!
-      </p>
+      
+      <p class="message">I currently making some improvements to the website to serve you better. Please check back soon!</p>
+      
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      
+      <p class="estimated-time">Estimated completion: <span id="countdown">2 hours</span></p>
+      
+      <div class="notify-form">
+        <p>Get notified when we're back online:</p>
+        <div class="input-group">
+          <input type="email" class="notify-input" placeholder="Enter your email">
+          <button class="notify-btn">Notify Me</button>
+        </div>
+      </div>
+      
+      <div class="contact-info">
+        <p>If need urgent assistance? PLEASE DON'T CONTACT:</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="social-link"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link"><i class="fa-solid fa-message"></i></a>
+        </div>
+      </div>
     </div>
+    
+    <script>
+      // Floating particles animation
+      document.addEventListener('DOMContentLoaded', function() {
+        const particlesContainer = document.getElementById('particles');
+        const colors = ['#6d7993', '#9babc2', '#b8bec5', '#6b7c93'];
+        
+        for (let i = 0; i < 25; i++) {
+          createParticle(particlesContainer, colors);
+        }
+        
+        // Countdown timer
+        let hours = 2;
+        let minutes = 0;
+        
+        function updateCountdown() {
+          if (minutes === 0) {
+            hours--;
+            minutes = 59;
+          } else {
+            minutes--;
+          }
+          
+          if (hours === 0 && minutes === 0) {
+            document.getElementById('countdown').textContent = 'Any moment now!';
+            return;
+          }
+          
+          const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+          document.getElementById('countdown').textContent = `${hours}:${formattedMinutes}`;
+          
+          setTimeout(updateCountdown, 60000); // Update every minute
+        }
+        
+        setTimeout(updateCountdown, 60000);
+        
+        // Form submission handler
+        const notifyBtn = document.querySelector('.notify-btn');
+        notifyBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const emailInput = document.querySelector('.notify-input');
+          
+          if (validateEmail(emailInput.value)) {
+            this.textContent = 'Thank you!';
+            emailInput.value = '';
+            setTimeout(() => {
+              this.textContent = 'Notify Me';
+            }, 3000);
+          } else {
+            emailInput.style.boxShadow = 'inset 0 0 0 2px #ff6b6b';
+            setTimeout(() => {
+              emailInput.style.boxShadow = '';
+            }, 3000);
+          }
+        });
+      });
+      
+      function createParticle(container, colors) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random properties
+        const size = Math.random() * 20 + 5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 20 + 10;
+        
+        // Apply styles
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.backgroundColor = color;
+        particle.style.left = `${left}%`;
+        particle.style.bottom = '-5%';
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(particle);
+      }
+      
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
   </body>
 </html>
