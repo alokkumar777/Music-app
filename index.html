@@ -27,29 +27,15 @@
         position: relative;
         overflow-x: hidden; /* Prevent horizontal scrolling */
       }
-
-      .particles {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.6;
-        animation: float 20s infinite linear;
-      }
       
       .maintenance-container {
-        width: 100%;
+        width: 90%;
         max-width: 600px;
         padding: 40px;
         text-align: center;
         border-radius: 20px;
-        box-shadow: 12px 12px 24px #b8bec5, 
-                    -12px -12px 24px #ffffff;
+        /* box-shadow: 12px 12px 24px #b8bec5, 
+                    -12px -12px 24px #ffffff; */
         background-color: #e0e5ec;
         transition: all 0.3s ease;
         position: relative;
@@ -57,11 +43,11 @@
         overflow: hidden;
       }
       
-      .maintenance-container:hover {
+      /* .maintenance-container:hover {
         box-shadow: 8px 8px 16px #b8bec5, 
                     -8px -8px 16px #ffffff;
         transform: translateY(-3px);
-      }
+      } */
       
       .icon-container {
         margin-bottom: 30px;
@@ -295,28 +281,8 @@
           font-size: 60px;
         }
         
-        .notify-input {
-          padding: 10px 15px;
-        }
-        
-        .notify-btn {
-          padding: 10px 15px;
-        }
       }
 
-      @media (max-width: 360px) {
-      .input-group {
-        flex-direction: column;
-      }
-
-      .notify-input {
-        margin-bottom: 10px;
-      }
-
-      .notify-btn {
-        width: 100%;
-      }
-    }
     </style>
   </head>
   <body>
@@ -337,13 +303,13 @@
       
       <p class="estimated-time">Estimated completion: <span id="countdown">2 hours</span></p>
       
-      <div class="notify-form">
+      <!-- <div class="notify-form">
         <p>Get notified when we're back online:</p>
         <div class="input-group">
           <input type="email" class="notify-input" placeholder="Enter your email">
           <button class="notify-btn">Notify Me</button>
         </div>
-      </div>
+      </div> -->
       
       <div class="contact-info">
         <p>If need urgent assistance? PLEASE DON'T CONTACT:</p>
@@ -356,84 +322,6 @@
     </div>
     
     <script>
-      // Floating particles animation
-      document.addEventListener('DOMContentLoaded', function() {
-        const particlesContainer = document.getElementById('particles');
-        const colors = ['#6d7993', '#9babc2', '#b8bec5', '#6b7c93'];
-        
-        for (let i = 0; i < 25; i++) {
-          createParticle(particlesContainer, colors);
-        }
-        
-        // Countdown timer
-        let hours = 2;
-        let minutes = 0;
-        
-        function updateCountdown() {
-          if (minutes === 0) {
-            hours--;
-            minutes = 59;
-          } else {
-            minutes--;
-          }
-          
-          if (hours === 0 && minutes === 0) {
-            document.getElementById('countdown').textContent = 'Any moment now!';
-            return;
-          }
-          
-          const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-          document.getElementById('countdown').textContent = `${hours}:${formattedMinutes}`;
-          
-          setTimeout(updateCountdown, 60000); // Update every minute
-        }
-        
-        setTimeout(updateCountdown, 60000);
-        
-        // Form submission handler
-        const notifyBtn = document.querySelector('.notify-btn');
-        notifyBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const emailInput = document.querySelector('.notify-input');
-          
-          if (validateEmail(emailInput.value)) {
-            this.textContent = 'Thank you!';
-            emailInput.value = '';
-            setTimeout(() => {
-              this.textContent = 'Notify Me';
-            }, 3000);
-          } else {
-            emailInput.style.boxShadow = 'inset 0 0 0 2px #ff6b6b';
-            setTimeout(() => {
-              emailInput.style.boxShadow = '';
-            }, 3000);
-          }
-        });
-      });
-      
-      function createParticle(container, colors) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random properties
-        const size = Math.random() * 20 + 5;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const left = Math.random() * 100;
-        const delay = Math.random() * 15;
-        const duration = Math.random() * 20 + 10;
-        
-        // Apply styles
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.backgroundColor = color;
-        particle.style.left = `${left}%`;
-        particle.style.bottom = '-5%';
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-        
-        container.appendChild(particle);
-      }
-      
       function validateEmail(email) {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
