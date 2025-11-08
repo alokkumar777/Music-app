@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shut Down</title>
+    <title>Under Maintenance</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -31,7 +31,7 @@
         color: #4a4a4a;
         overflow: hidden;
         position: relative;
-        overflow-x: hidden; /* Prevent horizontal scrolling */
+        overflow-x: hidden;
       }
 
       .maintenance-container {
@@ -40,8 +40,6 @@
         padding: 40px;
         text-align: center;
         border-radius: 20px;
-        /* box-shadow: 12px 12px 24px #b8bec5, 
-                    -12px -12px 24px #ffffff; */
         background-color: #e0e5ec;
         transition: all 0.3s ease;
         position: relative;
@@ -49,15 +47,8 @@
         overflow: hidden;
       }
 
-      /* .maintenance-container:hover {
-        box-shadow: 8px 8px 16px #b8bec5, 
-                    -8px -8px 16px #ffffff;
-        transform: translateY(-3px);
-      } */
-
       .icon-container {
         margin-bottom: 30px;
-        /* position: relative; */
         display: flex;
         justify-content: center;
       }
@@ -150,13 +141,6 @@
         box-shadow: 7px 7px 14px #b8bec5, -7px -7px 14px #ffffff;
       }
 
-      .disabled-link {
-        pointer-events: none; /* Prevent clicking */
-        color: gray; /* Change appearance */
-        text-decoration: none;
-        cursor: not-allowed; /* Show "not-allowed" cursor */
-      }
-
       @keyframes shine {
         0% {
           background-position: 0;
@@ -208,53 +192,7 @@
         }
       }
 
-      @keyframes float {
-        0% {
-          transform: translateY(0) rotate(0deg);
-          opacity: 0.6;
-        }
-        50% {
-          transform: translateY(-60vh) rotate(180deg);
-          opacity: 0.2;
-        }
-        100% {
-          transform: translateY(-120vh) rotate(360deg);
-          opacity: 0;
-        }
-      }
-
-      /* Media queries for responsiveness */
-      @media (max-width: 768px) {
-        .maintenance-container {
-          padding: 30px;
-        }
-
-        .btn-shine {
-          font-size: 24px;
-        }
-
-        .message {
-          font-size: 16px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .maintenance-container {
-          padding: 25px;
-          width: 95%;
-        }
-
-        .btn-shine {
-          font-size: 22px;
-        }
-
-        .icon {
-          font-size: 60px;
-        }
-      }
-
-      /* From Uiverse.io by doniaskima */
-      /* HTML: <div class="loader"></div> */
+      /* Loader */
       .loader {
         --c1: #000000;
         --c2: #b21e35;
@@ -285,10 +223,6 @@
         border-top: 0;
         box-sizing: content-box;
         border-radius: 0 0 40% 40%;
-        mask: linear-gradient(#000 0 0) bottom/4px 2px no-repeat,
-          linear-gradient(#000 0 0);
-        -webkit-mask-composite: destination-out;
-        mask-composite: exclude;
         background: linear-gradient(var(--d, 0deg), var(--c2) 50%, #0000 0)
             bottom / 100% 205%,
           linear-gradient(var(--c2) 0 0) center/0 100%;
@@ -330,32 +264,25 @@
   <body>
     <div class="maintenance-container">
       <div class="icon-container">
-        <!-- From Uiverse.io by doniaskima -->
         <div class="loader"></div>
       </div>
-      <h1 class="btn-shine">Site Permanently Closed</h1>
+      <h1 class="btn-shine">We’ll Be Back Soon</h1>
       <p class="message">
-        This website has been permanently shut down and will not be returning.
-        Thank you to everyone who visited and supported this project.
+        Our website is currently undergoing scheduled maintenance to improve your experience.  
+        Please check back later — we’ll be up and running shortly.
       </p>
       <div class="progress-container">
         <div class="progress-bar" style="width: 100%;"></div>
       </div>
       <p class="estimated-time">
-        Status: <span id="countdown">Permanently Offline</span>
+        Status: <span id="countdown">Under Maintenance</span>
       </p>
       <div class="contact-info">
-        <p>This site is no longer active. Thank you for your understanding.</p>
+        <p>If you need to reach us in the meantime, connect below:</p>
         <div class="social-links">
-          <a href="#" class="social-link" style="opacity: 0.5; pointer-events: none;"
-            ><i class="fa-solid fa-envelope"></i
-          ></a>
-          <a href="#" class="social-link" style="opacity: 0.5; pointer-events: none;"
-            ><i class="fa-solid fa-phone"></i
-          ></a>
-          <a href="#" class="social-link" style="opacity: 0.5; pointer-events: none;"
-            ><i class="fa-solid fa-message"></i
-          ></a>
+          <a href="#" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="social-link"><i class="fa-solid fa-phone"></i></a>
+          <a href="#" class="social-link"><i class="fa-solid fa-message"></i></a>
         </div>
       </div>
     </div>
