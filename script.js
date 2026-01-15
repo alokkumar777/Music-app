@@ -227,3 +227,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize theme toggle
   setupThemeToggle();
 });
+
+// Function to update year automatically
+function updateYear() {
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+}
+
+// Initialize year on page load
+document.addEventListener("DOMContentLoaded", () => {
+  updateYear();
+});
